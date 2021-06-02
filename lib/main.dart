@@ -5,7 +5,7 @@ import 'mymodel.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  // const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,22 +29,20 @@ class HomePage extends StatelessWidget {
       ),
       body: Consumer<Item>(
         builder: (context, value, child) {
-          return Consumer<Item>(
-            builder: (context, value, child) => Column(
-              children: [
-                MaterialButton(
-                  color: Colors.red,
-                  child: Text(
-                    'Change Value',
-                    style: TextStyle(color: Colors.white, fontSize: 20),
-                  ),
-                  onPressed: () {
-                    value.changeValue();
-                  },
+          return Column(
+            children: [
+              MaterialButton(
+                color: Colors.red,
+                child: Text(
+                  'Change Value',
+                  style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
-                Text(value.meroValue),
-              ],
-            ),
+                onPressed: () {
+                  value.changeValue();
+                },
+              ),
+              Text(value.meroValue),
+            ],
           );
         },
       ),

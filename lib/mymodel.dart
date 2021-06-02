@@ -6,7 +6,7 @@ class Item with ChangeNotifier {
 
 // Method(Change Value)
   void changeValue() {
-    meroValue = 'Namaste';
+    meroValue == 'Hello' ? meroValue = 'Namaste' : meroValue = 'Hello';
     notifyListeners();
   }
 }
